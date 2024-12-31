@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructuring</title>
+</head>
+<body>
+    
+    <script>
+
+        let frutas = [['mamao', 'laranja', 'uva', 'banana', 'lima'], ['tomate', 'caju'],
+         {nome: "fruta-pao", fruta:'abacate', carne: 'jaca'}]
+
+         //Usando o operador destructuring para acessar pontos espécificos do array
+         let [[,,u],[,y],{carne:x}] = frutas
+         console.log(x,y,u);
+         
+    </script>
+</body>
+</html>

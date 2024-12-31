@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays em JavaScript</title>
+</head>
+
+<body>
+    <script>
+        // Arrays em JavaScript são objetos dinâmicos.
+        console.log(typeof Array, " - " + typeof new Array, " - " + typeof []);
+        document.write("Tipos: " + typeof Array, " - " + typeof new Array, " - " + typeof []);
+        document.write("<br>"); // Adiciona uma quebra de linha no HTML
+
+        // Criando arrays
+        let aprovados = new Array('Bia', 'Carlos', 'Kayky'); // Menos comum, prefira a sintaxe literal
+        let aprovadosLiteral = ['Bia', 'Carlos', 'Kayky']; // Sintaxe literal (recomendada)
+
+        document.write("Aprovados (com new Array): " + aprovados + "<br>");
+        document.write("Aprovados (literal): " + aprovadosLiteral + "<br>");
+
+        console.log("Acessando elementos:");
+        console.log(aprovados[0]); // Bia
+        console.log(aprovados[1]); // Carlos
+        console.log(aprovados[2]); // Kayky
+        console.log(aprovados[3]); // undefined (índice inexistente)
+
+        let aprovadoss = ['Bia', 'Carlos', 'felipe'];
+
+        aprovadoss[4] = 'paulo'; // Adicionando diretamente em um índice
+        aprovadoss.push('Último elemento no array'); // Adicionando no final com push()
+
+        aprovadoss.shift(); // Remove o primeiro elemento
+        aprovadoss.unshift('Adiciona no Início do Array'); // Adiciona no início
+
+        console.log("Tamanho do array aprovadoss:", aprovadoss.length);
+
+        aprovados[9] = 'Emilia'; // Cria um "buraco" no array (índices 3 a 8 ficam vazios)
+
+        let teste = aprovados; // teste agora aponta para o mesmo array que aprovados (não é uma cópia)
+        aprovadoss[10] = teste; // Adicionando o array 'aprovados' como um elemento dentro de 'aprovadoss'.
+
+        console.log("Tamanho do array aprovadoss (após adicionar array dentro):", aprovadoss.length);
+        console.log("Array aprovadoss:", aprovadoss);
+        console.log("Array aprovados:", aprovados);
+
+        const arrEstudo = ['Felipe', 'Bianchi', 'Oliveira', 'Galdino', 'Silva', 'Beijamin', 'kajimoto'];
+
+        let ultimoRemovido = arrEstudo.pop(); // Remove e retorna o último elemento
+        console.log("Último removido (pop):", ultimoRemovido);
+        console.log("Array arrEstudo após pop():", arrEstudo);
+
+        let primeiroRemovido = arrEstudo.shift(); // Remove e retorna o primeiro elemento
+        console.log("Primeiro removido (shift):", primeiroRemovido);
+        console.log("Array arrEstudo após shift():", arrEstudo);
+
+        // Usando splice()
+        let frutas = ['maçã', 'banana', 'uva', 'laranja'];
+        console.log("Array frutas original:", frutas);
+
+        // splice(índiceDeInício, quantidadeDeDeleções, item1, item2, ...)
+
+        let frutasRemovidas = frutas.splice(1, 2); // Remove 2 elementos a partir do índice 1 (banana e uva)
+        console.log("Frutas removidas (splice):", frutasRemovidas);
+        console.log("Array frutas após splice (remoção):", frutas);
+
+        frutas.splice(1, 0, 'maracujá', 'guaraná'); // Adiciona 'maracujá' e 'guaraná' no índice 1
+        console.log("Array frutas após splice (adição):", frutas);
+
+        let frutaSubstituida = frutas.splice(2, 1, 'acerola'); // Substitui o elemento no índice 2 ('guaraná') por 'acerola'
+        console.log("Fruta substituída (splice):", frutaSubstituida);
+        console.log("Array frutas após splice (substituição):", frutas);
+
+        // Exemplos adicionais e melhores práticas
+
+        // Iterando com for...of
+        console.log("Iterando com for...of:");
+        for (const fruta of frutas) {
+            console.log(fruta);
+        }
+
+        // Criando uma cópia do array (spread operator) - importante para evitar efeitos colaterais
+        let copiaFrutas = [...frutas];
+        copiaFrutas.push('melancia');
+        console.log("Cópia do array:", copiaFrutas);
+        console.log("Array original (inalterado):", frutas);
+
+        // Usando map para transformar o array
+        let frutasMaiusculas = frutas.map(fruta => fruta.toUpperCase());
+        console.log("Frutas em maiúsculas (map):", frutasMaiusculas);
+
+        // Usando filter para criar um novo array com base em um critério
+        let frutasComM = frutas.filter(fruta => fruta.startsWith('m'));
+        console.log("Frutas que começam com 'm' (filter):", frutasComM);
+
+        // Usando reduce para somar tamanhos das strings
+        let totalLetras = frutas.reduce((acumulador, fruta) => acumulador + fruta.length, 0);
+        console.log("Total de letras nas frutas (reduce):", totalLetras);
+    </script>
+</body>
+
+</html>

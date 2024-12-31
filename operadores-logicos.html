@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores em JavaScript</title>
+</head>
+
+<body>
+    <script>
+        let n1 = 10;
+        let n2 = 3;
+
+        console.log("Operadores Aritméticos:");
+        console.log("n1 + n2 =", n1 + n2); // Adição
+        console.log("n1 - n2 =", n1 - n2); // Subtração
+        console.log("n1 * n2 =", n1 * n2); // Multiplicação
+        console.log("n1 / n2 =", n1 / n2); // Divisão
+        console.log("n1 % n2 =", n1 % n2); // Resto da divisão (módulo)
+        console.log("n1 ** n2 =", n1 ** n2); // Exponenciação (n1 elevado a n2)
+        console.log(""); // Linha em branco para melhor visualização
+
+        console.log("Operadores de Atribuição:");
+        let n3 = 20;
+        console.log("n3 =", n3);
+
+        n3 += 2; // n3 = n3 + 2
+        console.log("n3 += 2:", n3);
+
+        n3 -= 2; // n3 = n3 - 2
+        console.log("n3 -= 2:", n3);
+
+        n3 *= 3; // n3 = n3 * 3
+        console.log("n3 *= 3:", n3);
+
+        n3 /= 2; // n3 = n3 / 2
+        console.log("n3 /= 2:", n3);
+
+        n3 **= 2; // n3 = n3 ** 2
+        console.log("n3 **= 2:", n3);
+
+        n3 %= 3; // n3 = n3 % 3
+        console.log("n3 %= 3:", n3);
+        console.log("");
+
+        console.log("Incremento e Decremento:");
+
+        let i = 0;
+        console.log("i++ (pós-incremento):", i++); // Imprime 0 e depois incrementa i para 1
+        console.log("i (após o pós-incremento):", i);
+        console.log("++i (pré-incremento):", ++i); // Incrementa i para 2 e depois imprime 2
+        console.log("i-- (pós-decremento):", i--); // Imprime 2 e depois decrementa i para 1
+        console.log("--i (pré-decremento):", --i); // Decrementa i para 0 e depois imprime 0
+        console.log("");
+
+        console.log("Operadores Lógicos:");
+        let idade = 21;
+        let paisPresentes = false;
+        let comproBilhete = true; // Corrigido para true para demonstrar o exemplo
+        const podeViajar = (idade >= 18 || paisPresentes) && comproBilhete;
+        console.log(`Pode viajar: ${podeViajar}`);
+        console.log("");
+
+        console.log("Cálculo de Média:");
+        let n4 = 6;
+        let n5 = 8;
+        let n6 = 9;
+        console.log(`Números: ${n4}, ${n5}, ${n6}`);
+
+        let media = (n4 + n5 + n6) / 3; // Usando n4, n5 e n6 para o cálculo da média
+        console.log(`Média: ${media.toFixed(2)}`); // Usando toFixed para formatar para duas casas decimais
+        console.log("");
+
+        //Operadores de Comparação
+        console.log("Operadores de Comparação:")
+        let a = 10;
+        let b = "10";
+        console.log("a == b:", a == b); // true (comparação com conversão de tipo)
+        console.log("a === b:", a === b); // false (comparação estrita, sem conversão de tipo)
+        console.log("a != b:", a != b); // false
+        console.log("a !== b:", a !== b); // true
+        console.log("a > 5:", a > 5); // true
+        console.log("a < 12:", a < 12); // true
+        console.log("a >= 10:", a >= 10); // true
+        console.log("a <= 9:", a <= 9); // false
+        console.log("");
+
+        //Operador Ternário
+        console.log("Operador Ternário:")
+        let pontuacao = 75;
+        let resultado = pontuacao >= 70 ? "Aprovado" : "Reprovado";
+        console.log(`Resultado: ${resultado}`); // Imprime "Aprovado"
+        console.log("");
+
+        //Operador typeof
+        console.log("Operador typeof:")
+        let nome = "João";
+        let idadePessoa = 30;
+        let ehEstudante = true;
+        let valorNulo = null;
+        let valorIndefinido;
+
+        console.log("Tipo de nome:", typeof nome); // string
+        console.log("Tipo de idadePessoa:", typeof idadePessoa); // number
+        console.log("Tipo de ehEstudante:", typeof ehEstudante); // boolean
+        console.log("Tipo de valorNulo:", typeof valorNulo); // object (um bug histórico do JavaScript)
+        console.log("Tipo de valorIndefinido:", typeof valorIndefinido); // undefined
+    </script>
+</body>
+
+</html>

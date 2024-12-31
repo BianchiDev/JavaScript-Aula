@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function dividir(numerador, denominador) {
+            if (denominador === 0) {
+                console.error("Divisão por zero não é permitida!");
+                return;
+            }
+            return numerador / denominador;
+        }
+
+        dividir(10, 0);
+        /*
+       O que faz o console.error()?
+       O método console.error() é utilizado em JavaScript para registrar mensagens 
+       de erro no console do navegador. Quando você chama essa função, a mensagem 
+       que você passar como argumento será exibida no console, geralmente destacada 
+       de alguma forma (como em vermelho) para indicar que se trata de um erro.
+       
+       Por que usar console.error()?
+       
+       Depuração: É uma ferramenta essencial para encontrar e corrigir bugs em seu código.
+       Ao registrar mensagens de erro em pontos específicos do seu código, você pode 
+       acompanhar o fluxo de execução e identificar onde estão ocorrendo problemas.
+       Diagnóstico: Ajuda a entender o motivo de um determinado comportamento 
+       inesperado do seu programa.
+       Registro: Pode ser usado para registrar eventos importantes ou erros que ocorrem em 
+       sua aplicação, facilitando a análise posterior.
+       
+       Neste exemplo, se você chamar a função dividir com o denominador igual a zero,
+       a mensagem "Divisão por zero não é permitida!" será exibida no console, 
+       indicando que ocorreu um erro.
+       
+       Diferenças entre console.log() e console.error():
+       
+       console.log(): Serve para imprimir qualquer tipo de mensagem no console,
+       seja para fins de depuração ou para exibir informações ao usuário.
+       console.error(): É mais específico para mensagens de erro, e o navegador
+       geralmente as destaca visualmente para facilitar a identificação.
+       */
+    </script>
+</body>
+
+</html>

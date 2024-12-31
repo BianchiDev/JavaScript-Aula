@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Array</title>
+</head>
+
+<body>
+    <script>
+        let frutas = ['banana', 'bergamota', 'bacuri', 'buriti', 'butiá', 'babaçu', 'abacate'];
+
+        // find(): Retorna o primeiro elemento que satisfaz a condição.
+        let primeiraFrutaComB = frutas.find(fruta => fruta.startsWith('b'));//startsWith() usado para veridicar se uma String começa com um determinado conjunto de caracteres. 
+        console.log("Primeira fruta com 'b':", primeiraFrutaComB); // Output: banana
+
+        let frutaInexistente = frutas.find(fruta => fruta.startsWith('x'));
+        console.log("Fruta com 'x' (não encontrada):", frutaInexistente); // Output: undefined
+
+        // findIndex(): Retorna o índice do primeiro elemento que satisfaz a condição ou -1 se não encontrar.
+        let indiceBanana = frutas.findIndex(fruta => fruta === 'banana');
+        console.log("Índice da banana:", indiceBanana); // Output: 0
+
+        let indiceInexistente = frutas.findIndex(fruta => fruta === 'limão');
+        console.log("Índice do limão (não encontrado):", indiceInexistente); // Output: -1
+
+        // filter(): Cria um novo array com todos os elementos que passam no teste.
+        let frutasComB = frutas.filter(fruta => fruta.startsWith('b'));
+        console.log("Frutas que começam com 'b':", frutasComB); // Output: ['banana', 'bergamota', 'bacuri', 'buriti', 'butiá', 'babaçu']
+
+        // some(): Retorna true se pelo menos um elemento satisfaz a condição.
+        let temFrutaComA = frutas.some(fruta => fruta.startsWith('a'));
+        console.log("Tem fruta que começa com 'a'?", temFrutaComA); // Output: true
+
+        let temFrutaComZ = frutas.some(fruta => fruta.startsWith('z'));
+        console.log("Tem fruta que começa com 'z'?", temFrutaComZ); // Output: false
+
+        // every(): Retorna true se todos os elementos satisfazem a condição.
+        let todasFrutasTemMaisDe3Letras = frutas.every(fruta => fruta.length > 3);
+        console.log("Todas as frutas têm mais de 3 letras?", todasFrutasTemMaisDe3Letras); // Output: true
+
+        let todasFrutasComecamComB = frutas.every(fruta => fruta.startsWith('b'));
+        console.log("Todas as frutas começam com 'b'?", todasFrutasComecamComB); // Output: false
+
+        // forEach(): Executa uma função para cada elemento (não retorna um novo array).
+        console.log("Usando forEach para imprimir as frutas:");
+        frutas.forEach(fruta => console.log(fruta));
+
+        // Acesso por índice:
+        console.log("Acessando a terceira fruta pelo índice:", frutas[2]); // Output: bacuri
+
+        // for...of: Itera sobre os valores do array.
+        console.log("Iterando com for...of:");
+        for (const fruta of frutas) {
+            console.log(fruta);
+        }
+
+        // includes(): Verifica se o array contém um determinado elemento (retorna true ou false).
+        let temBanana = frutas.includes('banana');
+        console.log("Tem banana no array?", temBanana); // Output: true
+
+        let temLimao = frutas.includes('limão');
+        console.log("Tem limão no array?", temLimao); // Output: false
+
+        // Outros exemplos úteis
+        // map(): Cria um novo array com os resultados da chamada de uma função em cada elemento.
+        let frutasMaiusculas = frutas.map(fruta => fruta.toUpperCase());
+        console.log("Frutas em maiúsculo:", frutasMaiusculas);
+
+        // reduce(): Executa uma função redutora em cada elemento do array, resultando em um único valor.
+        let quantidadeTotalLetras = frutas.reduce((acumulador, fruta) => acumulador + fruta.length, 0);
+        console.log("Quantidade total de letras nas frutas:", quantidadeTotalLetras);
+
+        // join(): Junta todos os elementos de um array em uma string.
+        let stringDeFrutas = frutas.join(', ');
+        console.log("String de frutas:", stringDeFrutas);
+
+        // slice(): Cria uma cópia de uma parte do array.
+        let algumasFrutas = frutas.slice(1, 4); // Elementos do índice 1 até o 3 (não inclui o 4).
+        console.log("Algumas frutas:", algumasFrutas);
+
+        // splice(): Altera o conteúdo de um array, adicionando ou removendo elementos.
+        let frutasRemovidas = frutas.splice(2, 2, 'acerola', 'caju'); // Remove 2 elementos a partir do índice 2 e adiciona 'acerola' e 'caju'.
+        console.log("Frutas após splice:", frutas);
+        console.log("Frutas removidas pelo splice:", frutasRemovidas);
+
+    </script>
+</body>
+
+</html>

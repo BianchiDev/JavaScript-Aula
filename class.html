@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes em JavaScript</title>
+</head>
+
+<body>
+
+    <script>
+        class Pessoa {
+            constructor(nome, idade) { // Parâmetros no construtor
+                this.nome = nome;
+                this.idade = idade;
+            }
+
+            saudacao() {
+                console.log(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+            }
+
+            // Método para fazer aniversário
+            fazerAniversario() {
+                this.idade++;
+                console.log(`${this.nome} fez aniversário! Agora tem ${this.idade} anos.`);
+            }
+        }
+
+        // Criando instâncias de Pessoa
+        let pessoa1 = new Pessoa("João", 55);
+        pessoa1.saudacao();
+        pessoa1.fazerAniversario();
+
+        let pessoa2 = new Pessoa("Maria", 30);
+        pessoa2.saudacao();
+
+        class Aluno extends Pessoa {
+            constructor(nome, idade, notas) {
+                super(nome, idade); // Chama o construtor da classe pai (Pessoa)
+                this.notas = notas || { // Valor padrão para notas caso não seja fornecido
+                    t1: 0,
+                    t2: 0,
+                    p1: 0,
+                    p2: 0
+                };
+            }
+
+            mediaFinalPonderada() {
+                let m = this.notas.t1 * 2;
+                m += this.notas.t2 * 2;
+                m += this.notas.p1 * 3; // Peso 3 para P1 (exemplo)
+                m += this.notas.p2 * 3; // Peso 3 para P2 (exemplo)
+                m = m / 10; // Soma dos pesos: 2 + 2 + 3 + 3 = 10
+
+                return m;
+            }
+
+            //Sobrescrevendo o metodo saudacao da classe pai
+            saudacao() {
+                super.saudacao(); // Chama a saudação da classe pai
+                console.log(`Eu sou um aluno chamado ${this.nome}`);
+            }
+        }
+
+        // Criando instâncias de Aluno
+        let aluno1 = new Aluno("Pedro", 17, {
+            t1: 7,
+            t2: 8,
+            p1: 6,
+            p2: 9
+        });
+        console.log('Média final ponderada do aluno 1:', aluno1.mediaFinalPonderada());
+        aluno1.saudacao();
+
+        let aluno2 = new Aluno("Ana", 16); // Usando o valor padrão para notas
+        console.log('Média final ponderada do aluno 2 (com notas padrão):', aluno2.mediaFinalPonderada());
+        aluno2.saudacao();
+
+
+        // Exemplo de uso de instanceof
+        console.log(aluno1 instanceof Aluno); // true
+        console.log(aluno1 instanceof Pessoa); // true (Aluno herda de Pessoa)
+        console.log(pessoa1 instanceof Aluno); // false
+
+    </script>
+</body>
+
+</html> 

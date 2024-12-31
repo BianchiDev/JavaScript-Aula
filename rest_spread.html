@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spred</title>
+</head>
+<body>
+    <script>
+        
+        //contexto scread -> utilizado para expandir
+
+        let titoloArtigo = 'Como utlizar o operador rest/spread'
+        // console.log(titoloArtigo);
+        // console.log(...titoloArtigo);
+        // console.log([...titoloArtigo]);
+        // console.log({...titoloArtigo});
+
+        //array
+        let listaCursos1 = ['NodeJS e MongoDB', 'Angular']
+        let listaCursos2 = ['Solid', 'Laravel']
+        let listaCursosCompletos = [
+            'Web completo',
+            'Banco de dados',
+            ...listaCursos1,
+            ...listaCursos2,
+            {...titoloArtigo}
+        ]
+        
+        console.log(listaCursosCompletos);
+        
+        // contexto rest -> (utilizado para condensar)
+
+        function soma(...p){
+            let resultado = 0
+            p.forEach(v = resultado += v)
+
+            return resultado
+        }
+
+        let x = soma(5, 7, 49, 12, 56, 55, 13, -8, -5)
+        
+        function multiplicacao(m,...n) {
+            // console.log(m)
+            // console.log(n)
+            let resultado = 0
+            m.forEach(v => resultado += m * v)
+
+            return resultado
+            
+        }
+        let y = multiplicacao(5, 7, 12, 13, 49, 2, -11)
+        console.log('resultado: ', y)
+        
+
+    </script>
+</body>
+</html>

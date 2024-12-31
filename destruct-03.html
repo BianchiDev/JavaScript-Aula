@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let notebook = {
+            marca: "SAMSUNG",
+            modelo: "SPEED-5",
+            valor: 500.00,
+            data: "2024-01-02" // Formato ISO 8601
+        };
+
+        let { marca: x, data: a } = notebook
+
+        document.write('Computador: ' + x, '<br>'
+            + '<hr>' +
+            'data da venda: ' + a)
+    </script>
+</body>
+
+</html>

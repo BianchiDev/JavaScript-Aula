@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Tipos em JavaScript</title>
+</head>
+
+<body>
+    <script>
+        let n1 = 10;
+        let n2 = "2";
+
+        // Conversão de string para número
+        n2 = Number(n2); // Converte para Number (número inteiro ou decimal)
+        console.log("n2 (Number):", n2, typeof n2);
+
+        let n3 = "12aababaccasddf";
+        let n3parseInt = parseInt(n3); // Converte para inteiro (ignora caracteres não numéricos após o primeiro número)
+        console.log("n3 (parseInt):", n3parseInt, typeof n3parseInt);
+
+        let n3parseFloat = parseFloat("12.5abc"); // Converte para número decimal
+        console.log("n3 (parseFloat):", n3parseFloat, typeof n3parseFloat);
+
+
+        let n3NaN = parseInt("abc123"); // NaN (Not a Number)
+        console.log("n3 (parseInt NaN):", n3NaN, typeof n3NaN);
+
+        let n4 = 2;
+
+        let n5 = 11;
+        n5 = n5.toString(); // Converte um número para string
+        console.log("n5 (toString):", n5, typeof n5);
+
+        // Operações e coerção de tipos
+        console.log("\nOperações:");
+        console.log("n1 * n2:", n1 * n2, typeof (n1 * n2)); // Multiplicação (n1 e n2 são números)
+        console.log("n1 / n2:", n1 / n2, typeof (n1 / n2)); // Divisão (n1 e n2 são números)
+        console.log("n1 + n2:", n1 + n2, typeof (n1 + n2)); // Adição (n1 e n2 são números)
+        console.log("n1 - n2:", n1 - n2, typeof (n1 - n2)); // Subtração (n1 e n2 são números)
+
+        // exemplo de concatenação
+        let n6 = "10";
+        let n7 = 5;
+        console.log("n6 + n7 (concatenação):", n6 + n7, typeof (n6 + n7)); // Concatenação (n6 é string, n7 é number)
+        console.log("Number(n6) + n7 (adição):", Number(n6) + n7, typeof (Number(n6) + n7)); // Adição (n6 e n7 são number)
+
+
+        console.log("n3parseInt + n4:", n3parseInt + n4, typeof (n3parseInt + n4)); // Adição (n3parseInt e n4 são números)
+
+        // Outros exemplos e informações importantes
+
+        // Conversão booleana
+        console.log("\nConversão Booleana:");
+        console.log("Boolean(0):", Boolean(0)); // false
+        console.log("Boolean(1):", Boolean(1)); // true
+        console.log("Boolean(''):", Boolean("")); // false (string vazia)
+        console.log("Boolean('texto'):", Boolean("texto")); // true (string não vazia)
+        console.log("Boolean(null):", Boolean(null)); // false
+        console.log("Boolean(undefined):", Boolean(undefined)); // false
+        console.log("Boolean(NaN):", Boolean(NaN)); // false
+
+        // Coerção implícita de tipos
+        console.log("\nCoerção Implícita:");
+        console.log("1 + '1':", 1 + "1"); // "11" (concatenação)
+        console.log("1 == '1':", 1 == "1"); // true (comparação com conversão de tipo)
+        console.log("1 === '1':", 1 === "1"); // false (comparação estrita, sem conversão de tipo)
+
+        // parseInt com radix
+        console.log("\nparseInt com radix:");
+        console.log("parseInt('10', 2):", parseInt('10', 2)); // 2 (converte '10' da base 2 para decimal)
+        console.log("parseInt('10', 8):", parseInt('10', 8)); // 8 (converte '10' da base 8 para decimal)
+        console.log("parseInt('10', 16):", parseInt('10', 16)); // 16 (converte '10' da base 16 para decimal)
+
+        //toString com radix
+        console.log("\ntoString com radix:");
+        let numero = 255;
+        console.log(numero.toString(16)); // ff (converte o número decimal para hexadecimal)
+        console.log(numero.toString(8)); // 377 (converte o número decimal para octal)
+        console.log(numero.toString(2)); // 11111111 (converte o número decimal para binário)
+
+
+    </script>
+</body>
+
+</html>
